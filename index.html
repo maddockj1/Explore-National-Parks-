@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Explore National Parks</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+  <nav>
+    <div class="nav-wrapper green darken-4">
+      <a href="index.html" class="brand-logo">Explore your National Parks</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="sass.html">News</a></li>
+        <li><a href="badges.html">Favorites</a></li>
+        <!-- <li><a href="collapsible.html"></a></li> -->
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="divider"></div>
+    <div class="section">
+      <h5>Welcome to Explore your National Parks.</h5>
+      <p>You can use this website to get information about National Parks, camping there and check in to see what the current weather is.</p>
+    </div>
+    <h5>Choose a State to Get Started</h5>
+    <form>
+    <div class="row">
+      <div class="input-field col s4">
+        <select id=mySelect>
+        <option value="" disabled selected>Choose your option</option>
+	      <option value="dena,gaar,glba,katm,kefj,kova,lacl,wrst">Alaska</option>
+        <option value="npsa">American Samoa</option>
+	      <option value="grca,pefo,sagu">Arizona</option>
+	      <option value="hosp">Arkansas</option>
+	      <option value="chis,deva,jotr,lavo,pinn,redw,seki,yose">California</option>
+	      <option value="blca,grsa,meve,romo">Colorado</option>
+	      <option value="bisc,drto,ever">Florida</option>
+	      <option value="hale,havo">Hawaii</option>
+	      <option value="maca">Kentucky</option>
+	      <option value="acad">Maine</option>
+	      <option value="isro">Michigan</option>
+	      <option value="voya">Minnesota</option>
+	      <option value="glac">Montana</option>
+	      <option value="deva">Nevada</option>
+	      <option value="cave">New Mexico</option>
+	      <option value="thro">North Dakota</option>
+	      <option value="cuva">Ohio</option>
+	      <option value="crla">Oregon</option>
+	      <option value="cong">South Carolina</option>
+	      <option value="badl,wica">South Dakota</option>
+	      <option value="grsm">Tennessee</option>
+	      <option value="bibe,gumo">Texas</option>
+        <option value="viis">US Virgin Islands</option>
+	      <option value="arch,brca,cany,care,zion">Utah</option>
+	      <option value="shen">Virginia</option>
+	      <option value="mora,noca,olym">Washington</option>
+	      <option value="grte,yell">Wyoming</option>
+      </select>
+          <label>States</label>
+      </div>
+    </div>
+    <button id=submit class="btn waves-effect waves-light green darken-4" type="submit" name="action">Find Parks
+  <i class="material-icons right"></i>
+</button>
+  </form>
+  <div id=results class="row">
+  </div>
+    </div>
+
+  <script src="data/colorado.js"></script>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
