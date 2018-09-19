@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Favorite Mocha</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mocha.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+
+    <nav>
+      <div class="nav-wrapper green darken-4">
+        <a href="index.html" class="brand-logo">Explore your National Parks</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="/favorite.html">Favorite!</a></li>
+
+          <!-- <li><a href="collapsible.html"></a></li> -->
+        </ul>
+      </div>
+    </nav>
+<div id="mocha"></div>
+    <div class="container" id="contain">
+      <div class="divider"></div>
+      <div class="section">
+        <h5>Welcome to Explore Your National Parks.</h5>
+        <p>You can save your favorite National Park and come here to find it quickly.</p>
+      </div>
+      <div class="divider"></div>
+
+
+      </div>
+
+    <script src="favorite.js"></script>
+    <script src="mocha.js"></script>
+    <script>mocha.setup('bdd');</script>
+    <script src="tests.js"></script>
+    <script>
+      mocha.run();
+    </script>
+  </body>
+</html>
