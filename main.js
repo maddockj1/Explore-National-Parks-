@@ -11,14 +11,22 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log(stateSelect)
     //allows URL to be changed by drop menu
     let url = `https://api.nps.gov/api/v1/parks?api_key=v8ZxkynxpNzIjrYpuGL7Vr6trBu2WzWT9CSPaowj&fields=images&parkCode=${stateSelect}`
-    //console.log(url)
+    console.log(url)
     let stateData
-    //       //axios.get(url)
-    //       //.then((response) => {
-    stateData = COLORADO["data"]
+    let objData
+           axios.get(url)
+           .then((response) => {
+    objData = response["data"]
+    stateData=objData.data
     console.log(stateData)
-    //     })
-    // }
+    console.log(stateData.length)
+
+//need a function to delete previous Divs for when you switch states otherwise it will contiune making buttons and divs
+    function clearLayout(){
+      //get newcontain and set html to empty
+      document.getElementById("newContain").innerHTML=""
+    }
+    clearLayout()
     //function to create proper divs
     function createDivLayout() {
       for (let i = 0; i < stateData.length; i++) {
@@ -65,12 +73,12 @@ document.addEventListener('DOMContentLoaded', function() {
         favButton.classList.add("btn1")
         //append divs to results div so they appear before selector screen
         //appending title row to container
-        document.getElementById('contain').appendChild(titleDiv)
+        document.getElementById('newContain').appendChild(titleDiv)
         //append title to is row
 
-        document.getElementById("contain").appendChild(alignImgText)
+        document.getElementById("newContain").appendChild(alignImgText)
 
-        document.getElementById('contain').appendChild(buttonDiv)
+        document.getElementById('newContain').appendChild(buttonDiv)
 
         titleDiv.appendChild(parkTitle)
         //append row to add img and description
@@ -95,9 +103,10 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementsByClassName("s4")[i + 1].src = stateData[i].images[0].url
         document.getElementsByClassName("s8")[i].innerText = stateData[i].description
         document.getElementsByClassName("btn1")[i].innerText = "Favorite!"
-      }
+      } console.log(stateData[0].fullName)
     }
-    parkData()
+  parkData()
+
     console.log(document.getElementsByClassName("btn1"))
 
 
@@ -117,6 +126,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
     addFavorites()
+  })
     //end brackets of submit
   })
   //end bracket DOM content loaded

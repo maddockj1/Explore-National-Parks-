@@ -1,6 +1,10 @@
 img{
-  width:50%;
+  width:200%;
 }
 .nav-wrapper{
-  padding-left: 12px
+  padding-left: 12px;
+}
+body{
+  background-color:rgb(58,47,38);
+  color:white;
 }
