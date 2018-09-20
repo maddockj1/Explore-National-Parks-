@@ -1,25 +1,29 @@
 document.addEventListener('DOMContentLoaded', function() {
+    $(document).ready(function() {
+    $('.materialboxed').materialbox();
+  })
   $(document).ready(function() {
     $('select').formSelect();
   })
+
 
   //Event Listener triggers getting data
   document.getElementById('submit').addEventListener('click', function() {
     event.preventDefault()
     //varaiable for getting value of state drop list
     let stateSelect = document.getElementById("mySelect").value
-    console.log(stateSelect)
+    //console.log(stateSelect)
     //allows URL to be changed by drop menu
     let url = `https://api.nps.gov/api/v1/parks?api_key=v8ZxkynxpNzIjrYpuGL7Vr6trBu2WzWT9CSPaowj&fields=images&parkCode=${stateSelect}`
-    console.log(url)
+    //console.log(url)
     let stateData
     let objData
            axios.get(url)
            .then((response) => {
     objData = response["data"]
     stateData=objData.data
-    console.log(stateData)
-    console.log(stateData.length)
+    //console.log(stateData)
+    //console.log(stateData.length)
 
 //need a function to delete previous Divs for when you switch states otherwise it will contiune making buttons and divs
     function clearLayout(){
@@ -49,8 +53,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
         let imgTag = document.createElement("img")
         //add a class to img div for sizing
+        imgTag.classList.add("materialboxed")
         imgTag.classList.add("col")
         imgTag.classList.add("s4")
+
+        imgTag.classList.add("parkPhoto")
         //create a Div for text next to image
 
         let textDiv = document.createElement("div")
@@ -107,21 +114,29 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   parkData()
 
-    console.log(document.getElementsByClassName("btn1"))
+    //console.log(document.getElementsByClassName("btn1"))
 
 
     //eventlistener function for all fav buttons
     function addFavorites() {
       let favoriteButtons = document.getElementsByClassName("btn1")
-      console.log(favoriteButtons);
+      //console.log(favoriteButtons);
       for (let i = 0; i < favoriteButtons.length; i++) {
         favoriteButtons[i].addEventListener('click', function() {
           event.preventDefault()
           //array of park names
           let nameArr = document.getElementsByClassName("center-align")
-          console.log(nameArr[i])
+          //console.log(nameArr[i])
+          //arrayof img src
+          let imgArr= document.getElementsByClassName("parkPhoto")
+          //console.log(imgArr[i])
+          // description array
+          let descriptArr= document.getElementsByClassName("s8")
+          console.log(descriptArr[i]);
           //loop through buttons and names hopefully
           localStorage.setItem("park", nameArr[i].innerText)
+          localStorage.setItem("img", imgArr[i].src)
+          localStorage.setItem("descript", descriptArr[i].innerText)
         })
       }
     }
