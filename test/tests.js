@@ -18,8 +18,20 @@ describe("displayFavs should be a function",()=>{
     expect(displayFavs).to.be.a('function')
   })
 })
-describe("test create Div layouts",()=>{
-  it("does return Div Element", ()=>{
-    expect(favoriteTitleDiv).to.equal("h4")
+
+describe("test create display layouts",()=>{
+  let div
+  before(()=>{
+    div=favoriteDivs()
   })
+  it("does displayFavs exist", ()=>{
+    expect(displayFavs).to.be.a("function")
+  })
+  it("the h3 have text", ()=>{
+    expect(document.getElementsByClassName('center-align')[0].innerText).to.not.equal("")
+  })
+  it("does the Image have a src", ()=>{
+    expect(document.getElementsByClassName('materialboxed')[0].src).to.not.equal("")
+  })
+
 })

@@ -16,15 +16,15 @@ document.addEventListener('DOMContentLoaded', function() {
     //allows URL to be changed by drop menu
     let url = `https://api.nps.gov/api/v1/parks?api_key=v8ZxkynxpNzIjrYpuGL7Vr6trBu2WzWT9CSPaowj&fields=images&parkCode=${stateSelect}`
     //console.log(url)
+    let location=[]
     let stateData
     let objData
            axios.get(url)
            .then((response) => {
     objData = response["data"]
     stateData=objData.data
-    //console.log(stateData)
+    console.log(stateData)
     //console.log(stateData.length)
-
 //need a function to delete previous Divs for when you switch states otherwise it will contiune making buttons and divs
     function clearLayout(){
       //get newcontain and set html to empty
@@ -111,9 +111,12 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementsByClassName("parkPhoto")[i].src = stateData[i].images[0].url
         document.getElementsByClassName("text1")[i].innerText = stateData[i].description
         document.getElementsByClassName("btn1")[i].innerText = "Favorite!"
+        location.push(stateData[i].latLong)
       } console.log(stateData[0].fullName)
-    }
+
+    }console.log(location)
   parkData()
+
 
     //console.log(document.getElementsByClassName("btn1"))
 
@@ -138,6 +141,7 @@ document.addEventListener('DOMContentLoaded', function() {
           localStorage.setItem("park", nameArr[i].innerText)
           localStorage.setItem("img", imgArr[i].src)
           localStorage.setItem("descript", descriptArr[i].innerText)
+          localStorage.setItem("location", location[i])
         })
       }
     }
