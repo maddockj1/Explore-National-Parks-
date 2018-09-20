@@ -8,3 +8,8 @@ body{
   background-color:rgb(58,47,38);
   color:white;
 }
+#photo{
+  width:50%;
+  border:solid 5px black;
+
+}

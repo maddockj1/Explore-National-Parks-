@@ -18,8 +18,8 @@ describe("displayFavs should be a function",()=>{
     expect(displayFavs).to.be.a('function')
   })
 })
-describe("check local storage",()=>{
-  it("is empty", ()=>{
-    expect(displayFavs()).to.equal(false)
+describe("test create Div layouts",()=>{
+  it("does return Div Element", ()=>{
+    expect(favoriteTitleDiv).to.equal("h4")
   })
 })

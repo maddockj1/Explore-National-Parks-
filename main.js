@@ -55,7 +55,8 @@ document.addEventListener('DOMContentLoaded', function() {
         //add a class to img div for sizing
         imgTag.classList.add("materialboxed")
         imgTag.classList.add("col")
-        imgTag.classList.add("s4")
+        imgTag.classList.add("s6")
+        imgTag.classList.add("responsive-img")
 
         imgTag.classList.add("parkPhoto")
         //create a Div for text next to image
@@ -63,8 +64,8 @@ document.addEventListener('DOMContentLoaded', function() {
         let textDiv = document.createElement("div")
         //add a class to text div for sizing
         textDiv.classList.add("col")
-        textDiv.classList.add("s8")
-
+        textDiv.classList.add("s6")
+        textDiv.classList.add("text1")
         //add a div row for button
         let buttonDiv = document.createElement("div")
         //add row class to div
@@ -107,8 +108,8 @@ document.addEventListener('DOMContentLoaded', function() {
     function parkData() {
       for (i = 0; i < stateData.length; i++) {
         document.getElementsByClassName("center-align")[i].innerText = stateData[i].fullName
-        document.getElementsByClassName("s4")[i + 1].src = stateData[i].images[0].url
-        document.getElementsByClassName("s8")[i].innerText = stateData[i].description
+        document.getElementsByClassName("parkPhoto")[i].src = stateData[i].images[0].url
+        document.getElementsByClassName("text1")[i].innerText = stateData[i].description
         document.getElementsByClassName("btn1")[i].innerText = "Favorite!"
       } console.log(stateData[0].fullName)
     }
@@ -131,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function() {
           let imgArr= document.getElementsByClassName("parkPhoto")
           //console.log(imgArr[i])
           // description array
-          let descriptArr= document.getElementsByClassName("s8")
+          let descriptArr= document.getElementsByClassName("text1")
           console.log(descriptArr[i]);
           //loop through buttons and names hopefully
           localStorage.setItem("park", nameArr[i].innerText)
