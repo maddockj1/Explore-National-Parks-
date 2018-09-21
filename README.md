@@ -12,7 +12,7 @@
   You can then navigate to the favorite page and That will be an easy way to provide a quick view of the information for your favorite National Park.
   
   **Example**
-  
+  ![Mainpage](https://github.com/maddockj1/Explore-National-Parks-/blob/master/Screen%20Shot%202018-09-21%20at%208.25.56%20AM.png)
   
   
 
